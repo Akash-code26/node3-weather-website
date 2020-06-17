@@ -27,6 +27,7 @@ const hbs = require('hbs')
 const weatherReport = require('./requests')
 
 const app = express()        // here we set up a server
+const port = process.env.PORT || 3000
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname,'../public') 
@@ -111,6 +112,6 @@ app.get('*', (req, res) => {
 })
 
 
-app.listen(3000, () => {           // it listen in local port 3000
-    console.log('Server is up on port 3000') // this is only displayed to web server host
+app.listen(port, () => {           // it listen in local port 3000
+    console.log('Server is up on port '+ port) // this is only displayed to web server host
 })
