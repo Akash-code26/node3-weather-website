@@ -73,11 +73,11 @@ app.get('/weather', (req, res) => {
             error:'no address was given'
         })
     }
-    weatherReport(req.query.address,(error,{location,report} = {}) => {
+    weatherReport(req.query.address,(error,{location,report,temps} = {}) => {
         if(error){
             res.send({error})
         }else{
-            res.send({location,report})
+            res.send({location,report,temps})
         }
     })
 })

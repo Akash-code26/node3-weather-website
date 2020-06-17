@@ -16,9 +16,10 @@ const weatherReport = (location ,callback)=>{
             callback(body.message,undefined)
         
         }else{ 
-            const location = (`---${body.name} weather update ---`)
-            const report = (`The temperature is ${body.main.temp} degrees . Weather type is ${body.weather[0].description}`)
-            callback(undefined,{location,report})
+            const location =`---${body.name} weather update ---`
+            const report = `The temperature is ${body.main.temp} degrees . Weather type is ${body.weather[0].description}`
+            const temps = `Humidity: ${body.main.humidity}% . Max Temp: ${body.main.temp_max} degrees . Feels like ${body.main.feels_like} degrees` 
+            callback(undefined,{location,report,temps})
         }    
     })
 }
