@@ -13,12 +13,15 @@
 <body>
     <div class="main-content">
         {{>header}}
-        <p>Use this site to get weather!</p>
-
-    <form>
+        <p>Use this site to get weather update!</p>
+    <div class ="compose">
+          <form>
         <input placeholder="Location" name="text"> 
-        <button>Search</button>
+        <button id ="search">Search</button>
     </form>
+        <button id ="location">Use Current Location</button>
+    </div>
+  
     <p id="message-1"></p>
     <p id="message-2"></p>
     <p id="message-3"></p>

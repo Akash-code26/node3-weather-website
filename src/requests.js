@@ -5,7 +5,18 @@ const request = require('request')
 
 
 const weatherReport = (location ,callback)=>{
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=59581b333449f8e58ae79acf49011302`
+    let latitude,longitude,url
+    if(location.includes(',')){
+        location = location.split(',')
+        latitude = location[0]
+        longitude = location[1]
+        url =`http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=59581b333449f8e58ae79acf49011302`
+    }
+    else {
+        url = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=59581b333449f8e58ae79acf49011302`
+    }
+    
+   
 
     request({url, json:true},(error,{body}= {} )=>{ //json true parses the json data // const data = JSON.parse(response.body)
                                                                                     

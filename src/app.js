@@ -68,6 +68,7 @@ app.get('/help', (req,res) => {
 
 //app.com/weather
 app.get('/weather', (req, res) => {
+    
     if(!req.query.address){
         return res.send({
             error:'no address was given'
